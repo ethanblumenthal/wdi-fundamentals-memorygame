@@ -81,15 +81,25 @@ img {
 }
 
 .clearfix:after {
-visibility: hidden;
-display: block;
-content: " ";
-clear: both;
-height: 0;
-font-size: 0;
+  visibility: hidden;
+  display: block;
+  content: " ";
+  clear: both;
+  height: 0;
+  font-size: 0;
 }
 
 .name {
   color: #F15B31;
   font-weight: 700;
+}
+
+#reset-button {
+  font-size: 28px;
+  font-family: "Raleway", sans-serif;
+}
+
+#score {
+  font-size: 22px;
+  font-weight: bold;
 }

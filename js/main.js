@@ -21,10 +21,13 @@ var cards = [
   }
 ];
 var cardsInPlay = [];
+var score = 0;
 
 function checkForMatch() {
   if (cardsInPlay[0] === cardsInPlay[1]) {
     alert('You found a match!');
+    score += 1;
+    createScore();
   } else {
     alert('Sorry, try again.');
   }
@@ -40,6 +43,10 @@ function flipCard() {
   }
 }
 
+function createScore() {
+  document.getElementById('score').innerHTML = 'Score: ' + score;
+}
+
 function createBoard() {
   for (var i = 0; i < cards.length; i++) {
     var cardElement = document.createElement('img');
@@ -50,4 +57,14 @@ function createBoard() {
   }
 }
 
+function resetBoard() {
+  document.getElementById('reset-button').addEventListener('click', function() {
+    document.getElementById('game-board').innerHTML = '';
+    cardsInPlay = [];
+    createBoard();
+  });
+}
+
+createScore();
 createBoard();
+resetBoard();
